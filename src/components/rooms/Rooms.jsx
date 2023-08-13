@@ -5,6 +5,7 @@ import Card from "./Card";
 import Loader from "../shared/Loader";
 import { useSearchParams } from "react-router-dom";
 import Heading from "../heading/Heading";
+import { getAllRooms } from "../../api/rooms";
 
 const Rooms = () => {
   const [params, setParams] = useSearchParams();
@@ -15,8 +16,7 @@ const Rooms = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("./rooms.json")
-      .then((res) => res.json())
+    getAllRooms()
       .then((data) => {
         if (category) {
           const filtered = data.filter((room) => room.category === category);
@@ -43,7 +43,7 @@ const Rooms = () => {
           ))}
         </div>
       ) : (
-        <div className="pt-12">
+        <div className="min-h-[calc(100vh-300px)] flex items-center justify-center">
           <Heading
             title="No room available in this category"
             subtitle="Please select other categories"

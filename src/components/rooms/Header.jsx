@@ -1,16 +1,12 @@
 import React from "react";
 import Heading from "../heading/Heading";
 
-const Header = () => {
+const Header = ({ roomData }) => {
   return (
     <>
-      <Heading title="Beluvana Bali - Owl Bamboo House" subtitle="Sidemen, Indonesia"></Heading>
+      <Heading title={roomData?.title} subtitle={roomData?.location}></Heading>
       <div className="w-full md:h-[60vh] overflow-hidden rounded-xl ">
-        <img
-          className="object-cover w-full"
-          src="https://plus.unsplash.com/premium_photo-1677636665512-d210c919fe74"
-          alt=""
-        />
+        <img className="object-cover w-full" src={roomData?.image} alt="" />
       </div>
     </>
   );
