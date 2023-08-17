@@ -40,7 +40,7 @@ const RoomReservation = ({ roomData }) => {
     setValue({ ...value });
   };
 
-  const modalHandler = () => {
+  /*   const modalHandler = () => {
     addBooking(bookingInfo)
       .then((data) => {
         console.log("bookingInfo", data);
@@ -55,7 +55,7 @@ const RoomReservation = ({ roomData }) => {
         closeModal();
       });
     console.log(bookingInfo);
-  };
+  }; */
 
   return (
     <div className="bg-white rounded-xl border-[1px] border-natural-200 overflow-hidden col-span-3">
@@ -82,7 +82,6 @@ const RoomReservation = ({ roomData }) => {
         <div>${totalPrice}</div>
       </div>
       <BookingModal
-        modalHandler={modalHandler}
         bookingInfo={bookingInfo}
         isOpen={isOpen}
         closeModal={closeModal}
